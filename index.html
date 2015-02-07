@@ -3,17 +3,23 @@
   <head>
     <title>Physics Colloquium Bingo</title>
     <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="page.css"/>
+    <script src="gamelib.js"></script>
   </head>
   <body>
+    <div id="gameboard"></div>
     <div id="pagebanner">
       <h1>Physics Colloquium Bingo!</h1>
       <div id="menubar">
 	<a class="menuitem" href="#">New Game</a>
       </div>
+      <div id="userlist">
+	<span>Active Users</span>
+	<span class="username">User 1</span>
+      </div>
     </div>
-    <div id="gameboard">Board here</div>
-    <div id="userlist">
-      <span class="username">User 1</span>
-    </div>
+    <script>
+      createBoard();
+    </script>
   </body>
 </html>

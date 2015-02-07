@@ -1,0 +1,74 @@
+
+body {
+    background-color: rgb(50,200,50);
+    width: 1400px;
+    padding: 4px;
+    font-family: "Sans serif";
+    overflow-x: scroll;
+}
+
+div {
+    margin: 0%;
+    padding: 1%;
+}
+
+#pagebanner {
+    float: left;
+    margin: 0 0 0 2%;
+    background-color: rgb(0,0,128);
+}
+
+#pagebanner h1 {
+    margin: 0px 0px 4px;
+    background-color: white;
+    padding: 5% 10%;
+    text-align: center;
+}
+
+#menubar {
+    background-color: rgb(50,200,50);
+    margin: 4px 0px;
+}
+
+a.menuitem {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#gameboard {
+    float: left;
+    top: 8px;
+    left: 4px;
+    background-color: white;
+    border: solid 4px rgb(0,0,128); 
+    padding: 8px;
+    margin: 0px, 20%;
+}
+
+.gametile {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    border: solid 4px black;
+    border-collapse: collapse;
+}
+
+#userlist {
+    font-weight: bold;
+    margin: 4px 0px;
+    float: none;
+    background-color: white;
+    min-height: 100px;
+}
+
+#userlist span {
+    font-weight: bold;
+    float: left;
+    clear: left;
+    color: black;
+}
+
+#userlist .username {
+    font-weight: normal;
+}
