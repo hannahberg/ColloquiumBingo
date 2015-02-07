@@ -1,7 +1,7 @@
 
 body {
     background-color: rgb(50,200,50);
-    width: 1400px;
+    width: 1300px;
     padding: 4px;
     font-family: "Sans serif";
     overflow-x: scroll;
@@ -43,7 +43,7 @@ a.menuitem {
     background-color: white;
     border: solid 4px rgb(0,0,128); 
     padding: 8px;
-    margin: 0px, 20%;
+    margin: 0px 8px;
 }
 
 .gametile {

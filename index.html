@@ -11,7 +11,7 @@
     <div id="pagebanner">
       <h1>Physics Colloquium Bingo!</h1>
       <div id="menubar">
-	<a class="menuitem" href="#">New Game</a>
+	<a id="newgame" class="menuitem" href="#">New Game</a>
       </div>
       <div id="userlist">
 	<span>Active Users</span>
@@ -20,6 +20,7 @@
     </div>
     <script>
       createBoard();
+      document.getElementById("newgame").onclick = resetBoard;
     </script>
   </body>
 </html>
