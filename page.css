@@ -21,7 +21,7 @@ div {
 #pagebanner h1 {
     margin: 0px 0px 4px;
     background-color: white;
-    padding: 5% 10%;
+    padding: 5% 5%;
     text-align: center;
 }
 
@@ -42,16 +42,24 @@ a.menuitem {
     left: 4px;
     background-color: white;
     border: solid 4px rgb(0,0,128); 
-    padding: 8px;
-    margin: 0px 8px;
+    padding: 2px;
+    margin: 0px;
 }
 
 .gametile {
     height: 100px;
     width: 100px;
     text-align: center;
+    font-size: 0.8em;
     border: solid 4px black;
     border-collapse: collapse;
+    padding: 3px;
+}
+
+#infoblock {
+    margin: 4px 0px;
+    float: none;
+    background-color: white;
 }
 
 #userlist {
