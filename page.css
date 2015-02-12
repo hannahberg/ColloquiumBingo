@@ -36,6 +36,16 @@ a.menuitem {
     font-weight: bold;
 }
 
+a.menuitem:hover {
+    background-color: black;
+    color: white;
+}
+
+a.menuitem:active {
+    background-color: white;
+    color: black;
+}
+
 #gameboard {
     float: left;
     top: 8px;
@@ -61,6 +71,14 @@ a.menuitem {
     float: none;
     background-color: white;
 }
+
+#infoblock p {
+    text-align: center;
+}
+
+
+/* Not Used */
+
 
 #userlist {
     font-weight: bold;

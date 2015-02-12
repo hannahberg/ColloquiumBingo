@@ -14,15 +14,7 @@
 	<a id="newgame" class="menuitem" href="#">New Game</a>
       </div>
       <div id="infoblock">
-	<p>
-	  This Week's Colloquium:<br/><br/>
-	  Friday, February 13th<br/>
-	  3:00 – 4:00 pm<br/>
-	  Presenter: Xingang Chen<br/>
-	  University of Texas Dallas<br/>
-	  High energy physics in primordial density perturbations<br/>
-	  Robinson, Room 253<br/>
-	</p>
+				cam_pos[2] -= 0.01;
 
 	Discuss the current colloquium here: <a href="#">Pending Link</a>
       </div>
