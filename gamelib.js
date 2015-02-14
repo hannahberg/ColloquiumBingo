@@ -1,31 +1,48 @@
 
+default_desc = "";
+
 var textList = [
-    "Student falls asleep",
-    "Professor falls asleep",
-    "Grad student eats weird food",
-    "Atherton is inappropriately amused",
-    "Beauchaminn and Staii whisper",
-    "Tobin asks great question",
-    "Kenneth Lang variety hour",
-    "Lang reinforces how old he is",
-    "Train rattles colloquium room",
-    "Sliwa is visibly enraged or confused",
-    "Undergrads do homework in the back",
-    "Phys 13 students \"encouraged\" to attend",
-    "Colloquium goes over",
-    "Olum strokes beard",
-    "Speaker nails tough question",
-    "Speaker makes joke...silence",
-    "Reference to the standard model",
-    "Reference to the LHC",
-    "\"___ would fundamentally change our understanding of ___\"", 
-    "Pop culture reference",
-    "Speaker goes back more than 3 slides",
-    "Quote by famous physicst", 
-    "Stolen theory credited to actual source",
-    "Speaker claims talk is \"introductory level\"",
-    ""
+    ["Student falls asleep", "At least 5 seconds with eyes closed"],
+    ["Professor falls asleep", "At least 5 seconds with eyes closed"],
+    ["Grad student eats weird food","Up to interpretation. Anything that doesn't seem like a common food to bring to a talk"],
+    ["Atherton is inappropriately amused", "This includes turning around and smirking at the nearest grad student"],
+    ["Beauchaminn and Staii whisper",default_desc],
+    ["Tobin asks great question",default_desc],
+    ["Lang reinforces how old he is",default_desc],
+    ["Train rattles colloquium room",default_desc],
+    ["Sliwa is visibly enraged or confused",default_desc],
+    ["Undergrads do homework in the back","Or doing anything on a laptop really"],
+    ["Colloquium runs over time", "Must go over one hour, including Q&A"],
+    ["Olum strokes beard",default_desc],
+    ["Speaker nails tough question", "If you don't understand the question, it counts as tough"],
+    ["Speaker makes joke...silence",default_desc],
+    ["Reference to the standard model",default_desc],
+    ["Reference to the LHC",default_desc],
+    ["Reference to dark matter/energy",default_desc],
+    ["\"___ would fundamentally change our understanding of ___\"","Any comment that implies some groundbreaking idea would challenge a well-established concept in physics"], 
+    ["Pop culture reference",default_desc],
+    ["Speaker goes back at least 4 slides", "\"As we saw in the previous slide...\" *click* *click* *click*"],
+    ["Quote by famous physicst", "If you know who they are, it counts"], 
+    ["Stolen theory credited to actual source", "Credit where credit is due. Isn't that right, Mr. Edison?"],
+    ["Speaker claims talk is \"introductory level\"", "Sure it is"],
+    ["Atherton nods vigorously", "Doesn't he get tired?"],
+    ["Unlabeled or indecipherable graph", "Indecipherable could mean either way too much or way too little information"],
+    ["Undergrad asks question in second half","More than 30 minutes in"],
+    ["Image of famous physicist",default_desc],
+    ["Professor leaves early","Leaving and coming back doesn't count"],
+    ["Cebe asks a question",default_desc],
+    ["Sliwa laughs/smiles/makes a joke",default_desc],
+    ["Question preceded by long-winded backstory", "\"So, when I was working on (insert topic) at (insert prestegious university), we found that...\""],
+    ["Beauchemin is skeptical","Must be expressed verbally"],
+    ["5 or more equations on one slide", "Just stop"],
+    ["8 or more variables in one equation", "Makes perfect sense"],
+    ["Kenneth Lang variety hour", "Anything odd"],
 ];
+
+/* Retired Options
+    ["Phys 13 students \"encouraged\" to attend",""]
+
+*/
 
 var tileList=[[],[],[],[],[]];
 
@@ -43,9 +60,9 @@ function randomizeList(list) {
 
 function createBoard () {
     boardwrapper = document.getElementById("gameboard");
+
     board = document.createElement("table");
     boardwrapper.appendChild(board);
-
     for(i=0; i < 5; i++) {
 	row = document.createElement("tr");
 	board.appendChild(row);
@@ -56,6 +73,7 @@ function createBoard () {
 		return {
 		    isOn: false,
 		    tagid: node.id,
+		    description: default_desc,
 		    toggleOn: function(){
 			if (this.isOn === false) {
 			    this.isOn = true;
@@ -69,12 +87,13 @@ function createBoard () {
 			}
 		    },
 		    changeText: function(text){
-			node.innerHTML = text;
+			node.innerHTML = text[0];
+			this.description = text[1];
 		    }
 		};
 	    }(newtile, i, j);
 	    newtile.onclick = function(tobj) {
-		return function(){ tobj.toggleOn() };
+		return tobj.toggleOn;
 	    }(tileobj);
 	    tileList[i][j] = tileobj;	    
 	}
@@ -128,4 +147,31 @@ function checkWin(ni, nj) {
 	return true;
     }
     return false;
+}
+
+function writeTiles(element) {
+    tilelist = document.createElement("ul");
+    tilelist.id = "tilelist";
+    tilelist.appendChild(document.createTextNode(""));
+    for (i=0; i < textList.length; i++) {
+	tile = document.createElement("li");
+	tile.className = "tileinfo";
+
+	tilename = document.createElement("span");
+	tilename.appendChild(document.createTextNode(
+	    '"' + textList[i][0] + '" '
+	));
+	tilename.className = "tilename";
+
+	tiledesc = document.createElement("span");
+	tiledesc.appendChild(document.createTextNode(
+	    textList[i][1]
+	));
+	tiledesc.className = "tiledesc";
+
+	tile.appendChild(tilename);
+	tile.appendChild(tiledesc);
+	tilelist.appendChild(tile);
+    }
+    element.appendChild(tilelist);
 }
