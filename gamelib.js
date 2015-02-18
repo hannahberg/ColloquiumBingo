@@ -23,7 +23,7 @@ var textList = [
     ["Pop culture reference",default_desc],
     ["Speaker goes back at least 4 slides", "\"As we saw in the previous slide...\" *click* *click* *click*"],
     ["Quote by famous physicst", "If you know who they are, it counts"], 
-    ["Stolen theory credited to actual source", "Credit where credit is due. Isn't that right, Mr. Edison?"],
+    ["Stolen theory credited to actual source", "Credit where credit is due."],
     ["Speaker claims talk is \"introductory level\"", "Sure it is"],
     ["Atherton nods vigorously", "Doesn't he get tired?"],
     ["Unlabeled or indecipherable graph", "Indecipherable could mean either way too much or way too little information"],
@@ -36,7 +36,7 @@ var textList = [
     ["Beauchemin is skeptical","Must be expressed verbally"],
     ["5 or more equations on one slide", "Just stop"],
     ["8 or more variables in one equation", "Makes perfect sense"],
-    ["Kenneth Lang variety hour", "Anything odd"],
+    ["Kenneth Lang variety hour", "Anything out of the ordinary counts"],
 ];
 
 /* Retired Options
@@ -67,35 +67,9 @@ function createBoard () {
 	row = document.createElement("tr");
 	board.appendChild(row);
 	for(j=0; j < 5; j++) {
-	    newtile = newTileNode(i, j);
-	    row.appendChild(newtile);
-	    tileobj = function (node, ni, nj) {
-		return {
-		    isOn: false,
-		    tagid: node.id,
-		    description: default_desc,
-		    toggleOn: function(){
-			if (this.isOn === false) {
-			    this.isOn = true;
-			    node.style.background = "red";
-			    if (checkWin(ni, nj)) {
-				window.alert("BINGO!");
-			    };
-			} else {
-			    this.isOn = false;
-			    node.style.background = "initial";
-			}
-		    },
-		    changeText: function(text){
-			node.innerHTML = text[0];
-			this.description = text[1];
-		    }
-		};
-	    }(newtile, i, j);
-	    newtile.onclick = function(tobj) {
-		return tobj.toggleOn;
-	    }(tileobj);
-	    tileList[i][j] = tileobj;	    
+	    tileobj = new Tile(i, j);
+	    tileList[i][j] = tileobj;
+	    row.appendChild(tileobj.node);
 	}
     }
 }
@@ -112,12 +86,36 @@ function resetBoard() {
     }
 }
 
-function newTileNode (i, j) {
-    tile = document.createElement("td");
-    tile.appendChild(document.createTextNode(""));
-    tile.className = "gametile";
-    tile.id = "tile"+i+j;
-    return tile;
+function Tile (i, j) {
+    this.node = document.createElement("td");
+    this.node.appendChild(document.createTextNode(""));
+    this.node.className = "gametile";
+    this.node.id = "tile"+i+j;
+
+    this.isOn = false;
+    this.description = default_desc;
+
+    this.toggleOn = function(){
+	if (this.isOn === false) {
+	    this.isOn = true;
+	    this.node.style.background = "red";
+	    if (checkWin(i, j)) {
+		window.alert("BINGO!");
+	    };
+	} else {
+	    this.isOn = false;
+	    this.node.style.background = "white";
+	}
+    };
+
+    this.changeText = function(text){
+	this.node.innerHTML = text[0];
+	this.description = text[1];
+    };
+
+    this.node.onclick = function(obj){
+	return function(){ obj.toggleOn() };
+    }(this);
 }
 
 function checkWin(ni, nj) {
