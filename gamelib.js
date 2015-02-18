@@ -78,7 +78,9 @@ function resetBoard() {
     shuffledtext = randomizeList(textList);
     for(i=0; i<5; i++) {
 	for(j=0; j<5; j++) {
-	    tileList[i][j].changeText(shuffledtext[i*5+j]);
+	    if (!(i === 2 && j === 2)){
+		tileList[i][j].changeText(shuffledtext[i*5+j]);
+	    }
 	    if(tileList[i][j].isOn) {
 		tileList[i][j].toggleOn();
 	    }

@@ -10,3 +10,6 @@ Update 1 (For Fri. 2/20/15):
        2/17/15:
        - Fixed double-click-and-impossible-to-win glitch
        - "What's new" menu button added.
+
+       2/18/15:
+       - Added free space in center
