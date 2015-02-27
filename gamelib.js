@@ -8,12 +8,12 @@ var textList = [
     ["Atherton is inappropriately amused", "This includes turning around and smirking at the nearest grad student"],
     ["Beauchaminn and Staii whisper",default_desc],
     ["Tobin asks great question",default_desc],
-    ["Lang reinforces how old he is",default_desc],
-    ["Train rattles colloquium room",default_desc],
+    ["Gunther or Lang reinforces how old he is",default_desc],
     ["Sliwa is visibly enraged or confused",default_desc],
     ["Undergrads do homework in the back","Or doing anything on a laptop really"],
     ["Colloquium runs over time", "Must go over one hour, including Q&A"],
     ["Olum strokes beard",default_desc],
+    ["Speaker insults others in their field", "Indirect or implied insult is allowed"],
     ["Speaker nails tough question", "If you don't understand the question, it counts as tough"],
     ["Speaker makes joke...silence",default_desc],
     ["Reference to the standard model",default_desc],
@@ -40,8 +40,8 @@ var textList = [
 ];
 
 /* Retired Options
-    ["Phys 13 students \"encouraged\" to attend",""]
-
+    ["Phys 13 students \"encouraged\" to attend",default_desc]
+    ["Train rattles colloquium room",default_desc],
 */
 
 var tileList=[[],[],[],[],[]];
