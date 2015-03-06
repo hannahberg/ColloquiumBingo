@@ -19,3 +19,10 @@ Update 2 (For Fri. 2/27/15):
 	- Removed banner (so it's not so obvious on laptop screens)
 	- New phrase added "Speaker insults others in their field."
 	- Removed phrase "Train rattles colloquium room."
+
+Update 3 (For Fri. 3/5/15):
+       3/5/15:
+       - Removed Professor's names from squares.
+       - Added "Sponsored Ads"
+       - Added/removed some phrases.
+
