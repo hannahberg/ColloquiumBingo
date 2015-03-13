@@ -26,3 +26,6 @@ Update 3 (For Fri. 3/5/15):
        - Added "Sponsored Ads"
        - Added/removed some phrases.
 
+Update 4 (FOr Fri. 3/13/15):
+       3/13/15
+       - Updated speaker info
