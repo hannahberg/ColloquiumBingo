@@ -46,8 +46,10 @@ var textList = [
     ["Speaker wastes 5 minutes explaining outline",default_desc],
     ["Laptop/technical malfunction",default_desc],
     ["Blatant typo",default_desc],
+    ["Audience member is making their own slides",default_desc],
+    ["&Delta;E vs. E plot that doesn't actually show anything",default_desc],
     ["<i>''Beyond the scope of this work''</i>",default_desc],
-//    ["",default_desc],
+    ["Audience member is writing a paper",default_desc],
 //    ["",default_desc],
 //    ["",default_desc],
 //    ["Grad student eats weird food","Up to interpretation. Anything that doesn't seem like a common food to bring to a talk"],
@@ -177,7 +179,13 @@ function Tile (i, j) {
     this.changeText = function(text){
 	this.node.innerHTML = text[0];
 	if (text[0] == "Comic Sans text") {
-	this.node.innerHTML = '<font face = "Comic sans MS" size =" 5"><b>Comic Sans text</b></font>';
+//	this.node.innerHTML = '<font face = "Comic Sans MS" size =" 5"><b>Comic Sans text</b></font>';	
+//	this.node.innerHTML = '<font family = "myCustomFont2" size =" 5"><b>Comic Sans text</b></font>';
+//	this.node.innerHTML = '<font family = "cursive" size =" 5">Comic Sans Neue text</font>';
+	this.node.innerHTML = '<font  size =" 5"><b>Comic Sans text</b></font>';
+//	this.node.style.fontFamily = "arial";
+//	this.node.style.fontFamily = "Comic Sans MS";
+	this.node.style.fontFamily = "cursive",  "ComicNeue", "Comic Sans MS";
 	}
 	else if (text[0] == "Illegibly tiny fonts") {
 	this.node.innerHTML = '<font size =" -5"><sub><sup>Illegibly tiny fonts</sup></sub></font>';
