@@ -184,8 +184,11 @@ function Tile (i, j) {
 //	this.node.innerHTML = '<font family = "cursive" size =" 5">Comic Sans Neue text</font>';
 	this.node.innerHTML = '<font  size =" 5"><b>Comic Sans text</b></font>';
 //	this.node.style.fontFamily = "arial";
-//	this.node.style.fontFamily = "Comic Sans MS";
-	this.node.style.fontFamily = "cursive",  "ComicNeue", "Comic Sans MS";
+	this.node.style.fontFamily = "Comic Sans MS";
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	  // some code..
+	  this.node.style.fontFamily = "Chalkboard SE" ,"Comic Sans MS",  "Comic Sans MS", "Chalkboard SE" , "ComicNeue", "cursive", "Comic Sans MS";
+	  }
 	}
 	else if (text[0] == "Illegibly tiny fonts") {
 	this.node.innerHTML = '<font size =" -5"><sub><sup>Illegibly tiny fonts</sup></sub></font>';

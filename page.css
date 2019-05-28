@@ -109,7 +109,7 @@ a.menuitem:active {
 /*}*/
 
 @font-face {
-  font-family: "ComicNeue";
+  font-family: 'ComicNeue';
   src: url('./fonts/ComicNeue-Bold.eot');
   src: url('./fonts/ComicNeue-Bold.eot?#iefix') format('embedded-opentype'),
        url('./fonts/ComicNeue-Bold.woff2') format('woff2'),
