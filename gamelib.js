@@ -38,12 +38,12 @@ var textList = [
     ["Deliberately snarky comments",default_desc],
     ["Illegibly tiny fonts",default_desc],
     ["Obvious low-res screenshot of figure",default_desc],
-    ["",default_desc],
-    ["",default_desc],
-    ["",default_desc],
-    ["",default_desc],
-    ["",default_desc],
-    ["",default_desc],
+    ["Repeated use of ''um...''",default_desc],
+    ["Speaker wastes 5 minutes explaining outline",default_desc],
+    ["Laptop/technical malfunction",default_desc],
+    ["Blatant typo",default_desc],
+    ["''Beyond the scope of this work''",default_desc],
+//    ["",default_desc],
 //    ["",default_desc],
 //    ["",default_desc],
 //    ["Grad student eats weird food","Up to interpretation. Anything that doesn't seem like a common food to bring to a talk"],
@@ -155,6 +155,9 @@ function Tile (i, j) {
 
     this.changeText = function(text){
 	this.node.innerHTML = text[0];
+	if (text[0] == "Comic Sans text") {
+	this.node.innerHTML = '<font face = "Comic sans MS" size =" 5"><b>Comic Sans text</b></font>';
+	}
 	this.description = text[1];
     };
 
