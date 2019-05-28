@@ -5,15 +5,17 @@ var textList = [
 //    ["Student falls asleep", "At least 5 seconds with eyes closed"],
     ["Audience member obviously asleep", default_desc],
     ["Audience member eating/drinking excessively loudly", default_desc],
-    ["Luciano raises his hand", default_desc],
-    ["Rick claims he already solved the problem or discovered new physics", default_desc],
-    ["Speaker makes a joke & no one laughs", default_desc],
-    ["''...if you make this simple model...''", default_desc],
+//    ["Luciano raises his hand", default_desc],
+//    ["Rick claims he already solved the problem or discovered new physics", default_desc],
+//    ["Speaker makes a joke & no one laughs", default_desc],
+    ["<i>''...if you make this simple model...''</i>", default_desc],
+    ["<i>''I would like to thank the organizers for having me here...''</i>", default_desc],
+    ["Audience member:<br><i>''This might be a very technical question, but...''</i>", default_desc],
     ["Phone rings and owner can't turn it off", default_desc],
-    ["''Thank you for a very nice presentation'', then tears holes in it", default_desc],
+    ["<i>''Thank you for a very nice presentation''</i>, then tears holes in it", default_desc],
     ["Every speaker in session is male and over 50",default_desc],
-    ["''I have one very simple/quick question...''",default_desc],
-    ["''Isn't it really just constant-temperature?''",default_desc],
+    ["<i>''I have one very simple/quick question...''</i>",default_desc],
+    ["<i>''Isn't it really just constant-temperature?''</i>",default_desc],
     ["Possible violation of Brink-Axel explained away",default_desc],
     ["All speakers in a session are female = INSTANT WIN",default_desc],
     ["Data normalization doesn't make sense",default_desc],
@@ -21,16 +23,17 @@ var textList = [
     ["Gamma-Strength & Photon-Strength are used interchangeably",default_desc],
     ["Speaker doesn't look once at audience after title slide",default_desc],
     ["Speaker changes slide when trying to use laser pointer",default_desc],
+    ["Dates on slides are clearly from prior year's workshop",default_desc],    
     ["Axes have no units",default_desc],
     ["Axes have confusing labels",default_desc],
-    ["''Thank you for this *interesting* talk''",default_desc],
+    ["<i>''Thank you for this <i><b>interesting</b></i> talk''</i>",default_desc],
     ["Audience member gets defensive",default_desc],
     ["Audience member has no actual question",default_desc],
     ["Obviously old version of speaker's slides",default_desc],
     ["Audience member having audible conversation",default_desc],
     [">2x as many slides as minutes",default_desc],
     ["Speaker asks audience not to be disappointed",default_desc],
-    ["''...not so simple...''",default_desc],
+    ["<i>''...not so simple...''</i>",default_desc],
     ["Comic Sans text",default_desc],
     ["All red & blue text",default_desc],
     ["Speaker did not consider audience when making slides",default_desc],
@@ -38,11 +41,11 @@ var textList = [
     ["Deliberately snarky comments",default_desc],
     ["Illegibly tiny fonts",default_desc],
     ["Obvious low-res screenshot of figure",default_desc],
-    ["Repeated use of ''um...''",default_desc],
+    ["Repeated use of <i>''um...''</i>",default_desc],
     ["Speaker wastes 5 minutes explaining outline",default_desc],
     ["Laptop/technical malfunction",default_desc],
     ["Blatant typo",default_desc],
-    ["''Beyond the scope of this work''",default_desc],
+    ["<i>''Beyond the scope of this work''</i>",default_desc],
 //    ["",default_desc],
 //    ["",default_desc],
 //    ["",default_desc],
@@ -53,8 +56,8 @@ var textList = [
     ["Speaker reinforces how old they are",default_desc],
 //    ["Professor is visibly enraged or confused",default_desc],
 //    ["Undergrads do homework in the back","Or doing anything on a laptop really"],
-    ["Speaker promises they are ''almost done''",default_desc],
-    ["''I have just a few more slides...''",default_desc],
+    ["Speaker promises they are <i>''almost done''</i>",default_desc],
+    ["<i>''I have just a few more slides...''</i>",default_desc],
 //    ["Colloquium runs over time", "Must go over one hour, including Q&A"],
 //    ["Professor strokes beard",default_desc],
     ["Speaker insults others in their field", "Indirect or implied insult is allowed"],
@@ -65,7 +68,7 @@ var textList = [
 //    ["Reference to dark matter/energy",default_desc],
 //    ["Reference to quantum gravity", default_desc],
 //    ["Reference to the CMB", "Cosmic Microwave Background"],
-    ["\"___ would fundamentally change our understanding of ___\"","Any comment that implies some groundbreaking idea would challenge a well-established concept in physics"], 
+    ["<i>\"___ would fundamentally change our understanding of ___\"</i>","Any comment that implies some groundbreaking idea would challenge a well-established concept in physics"], 
     ["Pop culture reference",default_desc],
     ["Speaker goes back at least 4 slides", "\"As we saw in the previous slide...\" *click* *click* *click*"],
     ["Quote by famous physicist", "If you know who they are, it counts"], 
@@ -81,6 +84,15 @@ var textList = [
     ["5 or more equations on one slide", "Paul: Just Stop"],
 //    ["8 or more variables in one equation", "Makes perfect sense"],
 ];
+
+
+var freeList = [
+    ["Luciano raises his hand"],
+    ["Rick claims he already solved the problem or discovered new physics"],
+    ["Speaker makes a joke & no one laughs"],
+//    [" "]
+];
+
 
 /* Retired Options
     ["Phys 13 students \"encouraged\" to attend",default_desc]
@@ -119,10 +131,18 @@ function createBoard () {
 
 function resetBoard() {
     shuffledtext = randomizeList(textList);
+    myText = randomizeList(freeList);
     for(i=0; i<5; i++) {
 	for(j=0; j<5; j++) {
 	    if (!(i === 2 && j === 2)){
 		tileList[i][j].changeText(shuffledtext[i*5+j]);
+	    }
+	    else{
+//	     myText = randomizeList(textList);
+//	     myText = ["Free:",""]+ randomizeList(freeList)
+//		tileList[i][j].changeText(["Free: "+"rrrg"]);
+		tileList[i][j].changeText(["<b>Free:</b><br> "+myText[0]]);
+//		tileList[i][j].changeText(concat(["Free:"],myText[0]));
 	    }
 	    if(tileList[i][j].isOn) {
 		tileList[i][j].toggleOn();
@@ -157,6 +177,9 @@ function Tile (i, j) {
 	this.node.innerHTML = text[0];
 	if (text[0] == "Comic Sans text") {
 	this.node.innerHTML = '<font face = "Comic sans MS" size =" 5"><b>Comic Sans text</b></font>';
+	}
+	else if (text[0] == "Illegibly tiny fonts") {
+	this.node.innerHTML = '<font size =" -5"><sub><sup>Illegibly tiny fonts</sup></sub></font>';
 	}
 	this.description = text[1];
     };
