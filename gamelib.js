@@ -50,7 +50,26 @@ var textList = [
     ["&Delta;E vs. E plot that doesn't actually show anything",default_desc],
     ["<i>''Beyond the scope of this work''</i>",default_desc],
     ["Audience member is writing a paper",default_desc],
-//    ["",default_desc],
+    ["Audience member impatiently jumps in to answer question",default_desc],
+    [">4 people get up immediately after talk",default_desc],
+    ["Speaker proudly reports meeting deadline",default_desc],
+    ["The speaker finished early???",default_desc],
+    [">3 facilities described / illustrated",default_desc],
+    ["Speaker uses default Beamer template",default_desc],
+    ["Speaker uses pure-white background / low-effort slide design",default_desc],
+    ["Speaker presents re-analysis of audience member's data",default_desc],
+    ["Forced to pay attention: advisor/supervisor sitting behind/next to you",default_desc],
+    ["Students paying more attention than their advisor",default_desc],
+    ["Awkward experiment/detector photo",default_desc],
+    ["Wikipedia[Citation needed]",default_desc],
+    ["A grid of 16+ figures...",default_desc],
+    ["Any seemingly important slide show for 15 seconds",default_desc],
+    ["<i>''I didn't do the calculations myself''</i>",default_desc],
+    ["Speaker blames a student when they can't answer a question",default_desc],
+    ["Speaker puts ''so-called'' before a definitely known thing",default_desc],
+    ["Tentative mispronunciation of someone's name",default_desc],
+    ["Photo from conference city on title/last slide",default_desc],
+    ["Photo of wildlife/landmark from speaker's home institution",default_desc],
 //    ["",default_desc],
 //    ["Grad student eats weird food","Up to interpretation. Anything that doesn't seem like a common food to bring to a talk"],
 //    ["Professor is inappropriately amused", "This includes turning around and smirking at the nearest grad student"],
@@ -178,6 +197,8 @@ function Tile (i, j) {
 
     this.changeText = function(text){
 	this.node.innerHTML = text[0];
+//	Make sure to reset font to default after comic sans modification
+	this.node.style.fontFamily = "Sans serif";
 	if (text[0] == "Comic Sans text") {
 //	this.node.innerHTML = '<font face = "Comic Sans MS" size =" 5"><b>Comic Sans text</b></font>';	
 //	this.node.innerHTML = '<font family = "myCustomFont2" size =" 5"><b>Comic Sans text</b></font>';
@@ -187,11 +208,14 @@ function Tile (i, j) {
 	this.node.style.fontFamily = "Comic Sans MS";
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	  // some code..
-	  this.node.style.fontFamily = "Chalkboard SE" ,"Comic Sans MS",  "Comic Sans MS", "Chalkboard SE" , "ComicNeue", "cursive", "Comic Sans MS";
+	  this.node.style.fontFamily = "MyComicMS", "Chalkboard SE" ,"Comic Sans MS",  "Comic Sans", "Chalkboard SE" , "ComicNeue", "cursive" ;
 	  }
 	}
 	else if (text[0] == "Illegibly tiny fonts") {
 	this.node.innerHTML = '<font size =" -5"><sub><sup>Illegibly tiny fonts</sup></sub></font>';
+	}
+	else if (text[0] == "Wikipedia[Citation needed]") {
+	this.node.innerHTML = 'Wikipedia<font color ="blue" size =" -5"><sup>[Citation needed]</sup></font>';
 	}
 	this.description = text[1];
     };
