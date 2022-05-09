@@ -141,7 +141,8 @@ var textList = [
     ["Question preceded by long-winded backstory", "\"So, when I was working on (insert topic) at (insert prestegious university), we found that...\""],
 //    ["Professor is skeptical","Must express skepticism, usually in a question."],
     ["5 or more equations on one slide", "Paul: Just Stop"],
-//    ["8 or more variables in one equation", "Makes perfect sense"],
+    ["8 or more variables in one equation", "Makes perfect sense"],
+//    ["<i>''...if you make this simple model...''</i>", default_desc],
 ];
 
 
@@ -149,6 +150,7 @@ var freeList = [
     ["Luciano raises his hand"],
     ["Rick claims he already solved the problem or discovered new physics"],
     ["Speaker makes a joke & no one laughs"],
+    ["COVID reference"],
 //    [" "]
 ];
 
