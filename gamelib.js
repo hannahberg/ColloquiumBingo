@@ -147,11 +147,13 @@ var textList = [
     ["<i>''...it's great to see everyone again after so long...''</i>", default_desc],
     ["Older physicist talks over younger person with their hand up", default_desc],
     ["Person over 50 can't figure out how to use the microphone", default_desc],
+    ["<i>''...I think we can all agree that...''</i> for a controversial topic", default_desc],
+    ["Pointing out a mistake in someone else's work/analysis", default_desc],
 ];
 
 
 var freeList = [
-    ["Luciano raises his hand"],
+//    ["Luciano raises his hand"],
     ["Rick claims he already solved the problem or discovered new physics"],
     ["Speaker makes a joke & no one laughs"],
     ["COVID reference"],
