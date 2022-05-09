@@ -142,7 +142,11 @@ var textList = [
 //    ["Professor is skeptical","Must express skepticism, usually in a question."],
     ["5 or more equations on one slide", "Paul: Just Stop"],
     ["8 or more variables in one equation", "Makes perfect sense"],
-//    ["<i>''...if you make this simple model...''</i>", default_desc],
+    ["<i>''...this work was carried out during the pandemic...''</i>", default_desc],
+    ["<i>''...it's wonderful to be back after so long...''</i>", default_desc],
+    ["<i>''...it's great to see everyone again after so long...''</i>", default_desc],
+    ["Older physicist talks over younger person with their hand up", default_desc],
+    ["Person over 50 can't figure out how to use the microphone", default_desc],
 ];
 
 
