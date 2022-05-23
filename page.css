@@ -1,0 +1,153 @@
+
+body {
+    background-color: rgb(51, 153, 255);
+    width: 1300px;
+    padding: 4px;
+    font-family: "Sans serif";
+/*    font-family: "ComicNeue", "Sans serif";*/
+    overflow-x: scroll;
+}
+
+div {
+    margin: 0%;
+    padding: 1%;
+}
+
+#pagebanner {
+    float: left;
+    margin: 0 0 0 2%;
+    background-color: rgb(0,0,128);
+}
+
+#pagebanner h1 {
+    margin: 0px 0px 4px;
+    background-color: white;
+    padding: 5% 5%;
+    text-align: center;
+}
+
+#menubar {
+    background-color: rgb(50,200,50);
+    margin: 4px 0px;
+}
+
+a.menuitem {
+    text-decoration: none;
+    background-color: rgb(0,0,128);
+    color: white;
+    font-weight: bold;
+    border: solid 2px black;
+    padding: 0 4px;
+}
+
+a.menuitem:hover {
+    background-color: red;
+    color: white;
+}
+
+a.menuitem:active {
+    background-color: white;
+    color: black;
+}
+
+#gameboard {
+    float: left;
+    top: 8px;
+    left: 4px;
+    background-color: white;
+    border: solid 4px rgb(0,0,128); 
+    padding: 2px;
+    margin: 0px;
+}
+
+.gametile {
+    height: 120px;
+    width: 120px;
+    text-align: center;
+    font-size: 0.8em;
+    border: solid 4px black;
+    border-collapse: collapse;
+    padding: 3px;
+}
+
+#infoblock {
+    margin: 4px 0px;
+    float: none;
+    background-color: white;
+}
+
+#infoblock p {
+    text-align: center;
+}
+
+/*@font-face {*/
+/*  font-family: myFirstFont;*/
+/*  src: url(comic-sans-ms/comici.ttf);*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: myCustomFont;*/
+/*  src: url(comic.ttf);*/
+/*}*/
+
+
+/*@import url(https://db.onlinewebfonts.com/c/7cc6719bd5f0310be3150ba33418e72e?family=Comic+Sans+MS);*/
+
+@font-face {font-family: "myCustomFont2";
+    src: url("https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.eot");
+    src: url("https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.eot?#iefix") format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.woff2") format("woff2"),
+    url("https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.woff") format("woff"),
+    url("https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.ttf") format("truetype"),
+    url("https://db.onlinewebfonts.com/t/7cc6719bd5f0310be3150ba33418e72e.svg#Comic Sans MS") format("svg");
+}
+
+@font-face {
+/*  font-family: Comic Sans MS;*/
+  font-family: "MyComicMS";
+  src: url('./comic.ttf');
+}
+
+/*@font-face {*/
+/*/*  font-family: Comic Sans MS;*/*/
+/*  font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+/*  src: url(comic-sans-ms/comici.ttf);*/
+/*}*/
+
+@font-face {
+  font-family: 'ComicNeue';
+  src: url('./fonts/ComicNeue-Bold.eot');
+  src: url('./fonts/ComicNeue-Bold.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/ComicNeue-Bold.woff2') format('woff2'),
+       url('./fonts/ComicNeue-Bold.woff') format('woff'),
+       url('./fonts/ComicNeue-Bold.ttf')  format('truetype');
+  font-weight: 700;
+}
+
+
+
+/*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
+
+
+
+/* Not Used */
+
+
+#userlist {
+    font-weight: bold;
+    margin: 4px 0px;
+    float: none;
+    background-color: white;
+    min-height: 100px;
+}
+
+#userlist span {
+    font-weight: bold;
+    float: left;
+    clear: left;
+    color: black;
+}
+
+#userlist .username {
+    font-weight: normal;
+}

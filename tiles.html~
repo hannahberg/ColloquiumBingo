@@ -1,0 +1,8 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Physics Colloquium Bingo</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="page.css"/>
+    <script src="gamelib.js"></script>
+  </head>

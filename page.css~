@@ -1,0 +1,52 @@
+
+body {
+    background-color: rgb(50,200,50);
+    width: 100%;
+    padding: 4px;
+    font-family: "Sans serif";
+}
+
+div {
+    margin: 0px;
+    padding: 6px;
+}
+
+#pagebanner {
+    background-color: rgb(0,0,128);
+    width: 95%;
+    padding: 4px;
+}
+
+#pagebanner h1 {
+    margin: 0px 0px 8px;
+    background-color: white;
+    padding: 16px;
+    text-align: center;
+}
+
+#menubar {
+    background-color: rgb(50,200,50);
+}
+
+a.menuitem {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#gameboard {
+    background-color: white;
+    border: solid 4px rgb(0,0,128); 
+    float: left;
+    padding: 8px;
+    margin: 0px;
+}
+
+#userlist {
+    float: left;
+}
+
+#userlist span {
+    float: left;
+    clear: both;
+}

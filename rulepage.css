@@ -1,0 +1,18 @@
+
+#tilediv {
+    margin: 8px 0 8px 2%;
+    padding: 0px;
+    width: 70%;
+    background-color: white;
+    float: left;
+}
+
+.tileinfo {
+    margin: 16px 32px;
+}
+
+.tilename {
+    display: block;
+    font-weight: bold;
+    margin: 0px 0px 4px;
+}
