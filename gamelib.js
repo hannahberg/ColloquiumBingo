@@ -3,6 +3,15 @@ default_desc = "";
 
 var textList = [
 //    ["Student falls asleep", "At least 5 seconds with eyes closed"],
+    ["Movie of simulation", default_desc],
+    ["No definition of abbreviation/acronym", default_desc],
+    ["Onion model", default_desc],
+    ["*political comment*", default_desc],
+    ["Ignores binary stars/too hard to model", default_desc],
+    ["1D model of complex system", default_desc],
+    ["Biased gendering", default_desc],
+    //["Your advisor asks a question", default_desc],
+    ["Picture of underling", default_desc],
     ["Audience member obviously asleep", default_desc],
     ["Audience member eating/drinking excessively loudly", default_desc],
 //    ["Luciano raises his hand", default_desc],
@@ -151,9 +160,11 @@ var textList = [
 
 var freeList = [
 //    ["Luciano raises his hand"],
-    ["Rick claims he already solved the problem or discovered new physics"],
+    ["Chart of nuclei"],
     ["Speaker makes a joke & no one laughs"],
     ["COVID reference"],
+    ["Young researcher(s)"],
+    ["Bad coffee"],
 //    [" "]
 ];
 
