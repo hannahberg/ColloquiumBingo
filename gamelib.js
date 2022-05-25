@@ -4,6 +4,7 @@ default_desc = "";
 var textList = [
 //    ["Student falls asleep", "At least 5 seconds with eyes closed"],
     ["Movie of simulation", default_desc],
+    ["Reference to H2BF",default_desc],
     ["No definition of abbreviation/acronym", default_desc],
     ["Onion model", default_desc],
     ["*political comment*", default_desc],
